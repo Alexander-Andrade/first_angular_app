@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +9,16 @@
     <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular-messages.min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
-    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <div ng-controller="mainController">
-
-            <div>
-                <label>What is your twitter handle?</label>
-                <input type="text" ng-model="handle" />
-            </div>
-            <hr>
-            
-            <h1>twitter.com/{{ lowercasehandle() }}</h1>
-
+        <div class="row">
+            <div class="col-md-12">
+                <input id="name" type="text"  />
+             </div>
         </div>
     </div> 
+    <script src="app.js"></script>
 </body>
 </html>

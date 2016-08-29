@@ -1,9 +1,5 @@
-var myApp = angular.module('myApp', ['ngMessages','ngResource']);
+var tb = $("#name");
 
-
-myApp.controller('mainController', function($scope, $timeout, $filter,  $log) {
-    $scope.handle = '';
-    $scope.lowercasehandle = function(){
-        return $filter('lowercase')($scope.handle);
-    }
+tb.keypress(function(){
+    console.log("Pressed!");
 });
