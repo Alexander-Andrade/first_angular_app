@@ -6,4 +6,12 @@ myApp.controller('mainController', function($scope, $timeout, $filter,  $log) {
     $scope.lowercasehandle = function(){
         return $filter('lowercase')($scope.handle);
     }
+    
+    $scope.characters = 5;
+    
+    $scope.rules = [
+        { rulename: "Must be 5 characters" },
+        { rulename: "Must not be userd elsewhere" },
+        { rulename: "Must be cool" }
+    ];
 });
