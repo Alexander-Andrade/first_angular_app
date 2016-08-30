@@ -10,12 +10,16 @@ myApp.config(function($routeProvider){
         templateUrl: 'pages/second.html',
         controller: 'secondController'
     })
+    .when('/second/:num',{
+        templateUrl: 'pages/second.html',
+        controller: 'secondController'
+    })
 });
 
-myApp.controller('mainController', function($scope, $location, $log){
-    
+myApp.controller('mainController', function($scope, $routeParams){
+    $scope.num = $routeParams.num;
 });
 
-myApp.controller('secondController', function($scope, $location, $log){
-    
+myApp.controller('secondController', function($scope, $routeParams){
+    $scope.num = $routeParams.num || 1;
 });
