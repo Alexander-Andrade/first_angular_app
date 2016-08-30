@@ -16,10 +16,23 @@ myApp.config(function($routeProvider){
     })
 });
 
-myApp.controller('mainController', function($scope, $routeParams){
-    $scope.num = $routeParams.num;
+
+myApp.service('$nameService', function(){
+    var self = this;
+    this.name = 'John Doe'; 
+    
+    this.namelength = function() {
+        return self.name.length;
+    };
 });
 
-myApp.controller('secondController', function($scope, $routeParams){
-    $scope.num = $routeParams.num || 1;
+myApp.controller('mainController', function($scope, $log, $routeParams, $nameService){
+    $scope.name = $nameService.name;
+    $scope.$watch('name', function(){
+        $nameService.name = $scope.name;
+    });
+});
+
+myApp.controller('secondController', function($scope, $log, $routeParams, $nameService){
+    $scope.name = $nameService.name;
 });
