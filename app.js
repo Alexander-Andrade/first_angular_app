@@ -1,9 +1,6 @@
-var myApp = angular.module('myApp', ['ngMessages','ngResource']);
+var myApp = angular.module('myApp', []);
 
 
-myApp.controller('mainController', function($scope, $timeout, $filter,  $log) {
-    $scope.handle = '';
-    $scope.lowercasehandle = function(){
-        return $filter('lowercase')($scope.handle);
-    }
+myApp.controller('mainController', function($scope) {
+ 
 });
