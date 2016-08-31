@@ -19,8 +19,15 @@ myApp.config(function($routeProvider){
 myApp.controller('mainController',['$scope','$log', function($scope, $log){
   $scope.person = {
       name: 'Rufus Frus',
-      address: '555 Fru St.,Frutown '
+      address: '555 Fru St.,Frutown ',
+      city: 'New York',
+      state: 'NY',
+      zip: '11111'
   }
+  
+  @scope.formattedAddress(person){
+      return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;                                 
+    };
 }]);
 
 myApp.controller('secondController',['$scope', '$log', function($scope, $log){
@@ -33,7 +40,8 @@ myApp.directive("searchResult", function(){
         templateUrl: 'directives/searchresult.html',
         replace: true,
         scope:{
-            personObject: "="
+            personObject: "=",
+            formattedAddressFunction: "&"
         }
     }
 });
