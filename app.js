@@ -16,7 +16,7 @@ myApp.config(function($routeProvider){
     })
 });
 
-myApp.controller('mainController',['$scope','$log', function($scope, $log){
+myApp.controller('mainController',["$scope","$log", function($scope, $log){
   $scope.person = {
       name: 'Rufus Frus',
       address: '555 Fru St.,Frutown ',
@@ -25,9 +25,9 @@ myApp.controller('mainController',['$scope','$log', function($scope, $log){
       zip: '11111'
   }
   
-  @scope.formattedAddress(person){
-      return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;                                 
-    };
+  $scope.formattedAddress = function(person){
+      return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;            
+  };
 }]);
 
 myApp.controller('secondController',['$scope', '$log', function($scope, $log){
