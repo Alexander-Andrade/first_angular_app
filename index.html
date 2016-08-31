@@ -32,11 +32,13 @@
     
     <div class="container">
         <div ng-view></div>
-        <h3>Search Results</h3>
-        <div class="list-group">
-            <search-result></search-result>
-            <search-result></search-result>
-            <search-result></search-result>
+        <div ng-controller="mainController">
+            <h3>Search Results</h3>
+            <div class="list-group">
+                <search-result person-name="{{person.name}}", person-address="{{person.address}}"></search-result>
+                <search-result person-name="John Doe", person-address="San Francisco"></search-result>
+                <search-result person-name="I know what", person-address="I know where"></search-result>
+            </div>
         </div>
     </div> 
     <script src="app.js"></script>
