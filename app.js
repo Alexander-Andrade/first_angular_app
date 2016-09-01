@@ -58,6 +58,26 @@ myApp.directive("searchResult", function(){
         scope:{
             personObject: "=",
             formattedAddressFunction: "&"
+        },
+        compile: function(elem, attrs){
+        console.log('Compiling...');
+        console.log(elem);
+        
+        return {
+//            pre: function(scope, elements, attrs){    //it is not safe to user prelink
+//                console.log('Pre-linking')
+//                console.log(elements)
+//            },
+            post: function(scope, elements, attrs){
+                console.log('Post-linking...')
+                if(scope.personObject.name== 'Jane Frus'){
+                    elements.removeAttr('class');
+                }
+                    
+                console.log(elements);
+            }
         }
-    }
+        
+     } 
+ }   
 });
